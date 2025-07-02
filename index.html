@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>My Personal Webpage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+  <audio id="bg-audio" src="hello.mp3" autoplay loop></audio>
+  <button id="audio-play" style="position:fixed;top:20px;right:120px;z-index:1000;padding:0.6rem 1.2rem;border-radius:8px;background:#5bc0da;color:#222831;font-weight:bold;border:none;cursor:pointer;box-shadow:0 2px 8px rgba(91,192,218,0.15);">
+    Play Music
+  </button>
+  <button id="audio-pause" style="position:fixed;top:20px;right:20px;z-index:1000;padding:0.6rem 1.2rem;border-radius:8px;background:#5bc0da;color:#222831;font-weight:bold;border:none;cursor:pointer;box-shadow:0 2px 8px rgba(91,192,218,0.15);">
+    Pause Music
+  </button>
+    <nav> 
+      <div class="logo">HELLO!</div>
+      <div class="nav-items">
+        <a href="index.html">Homepage</a>
+        <a href="ME.html">About me</a>
+        <a href="exp.html">Experience</a>
+        <a href="family.html">My Family</a>
+        <a href="gallery.html">Photos</a>
+        <a href="hobby.html">Hobby</a>
+        <a href="education.html">Education</a>
+      </div>
+      
+    </nav>
+    <section class="hero">
+      <div class="hero-container">
+        <div class="column-left">
+          <h1>I am Hakim</h1>
+          <div class="home-content" alt="">
+           <h1>I'm a Student</h1> 
+<!-- Place this where you want the clock to appear -->
+<div id="clock" style="font-size:2rem; color:#5bc0da; font-weight:bold; margin:1rem 0;"></div>
+
+<script>
+function updateClock() {
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2, '0');
+  const m = String(now.getMinutes()).padStart(2, '0');
+  const s = String(now.getSeconds()).padStart(2, '0');
+  document.getElementById('clock').textContent = `${h}:${m}:${s}`;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+  const audio = document.getElementById('bg-audio');
+  const playBtn = document.getElementById('audio-play');
+  const pauseBtn = document.getElementById('audio-pause');
+
+  playBtn.onclick = function() {
+    audio.play();
+  };
+  pauseBtn.onclick = function() {
+    audio.pause();
+  };
+</script>
+          </div>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/nur-hakim-intern/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://x.com/kim_muq?s=11" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/nohhakimm/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <br>
+          </div>
+        <div class="column-right">
+          <img
+            src="hakim.jpg"
+            alt="gambar saya di genting"
+            class="hero-image"
+            usemap="#hakimmap"
+          />
+          <map name="hakimmap">
+    <area shape="rect" coords="0,0,100,320" href="https://www.tiktok.com/@nohhakimm2" alt="TikTok" target="_blank">
+    <area shape="rect" coords="101,0,320,320" href="https://music.youtube.com/playlist?list=PLaNgHRbbAeMttIfmf7z8omRuEP3go-7sV" alt="YouTube Music" target="_blank">
+  </map>
+        </div>
+    </section>
+  </body>
+</html>
